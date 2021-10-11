@@ -68,6 +68,7 @@ module "vpc" {
     "kubernetes.io/role/internal-elb"             = "1"
   }
 }
+
 module "eks" {
   source       = "terraform-aws-modules/eks/aws"  
   cluster_name    = var.cluster_name
@@ -85,6 +86,7 @@ module "eks" {
   ]
 
 }
+
 resource "kubernetes_deployment" "example" {
   metadata {
     name = "terraform-example"
