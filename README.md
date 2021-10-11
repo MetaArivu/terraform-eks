@@ -107,7 +107,7 @@ You will see the following Data in the browser
 
 If you can see Welcome to NGINX on your browser - then Congrats - Your 1st IaC is working!!!
 
-@Copyright MetaArivu. Apache 2.0 License 
+(c) Copyright MetaArivu. Apache 2.0 License 
 
 Authors
 
