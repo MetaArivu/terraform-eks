@@ -103,5 +103,5 @@ http://localhost:8000
 
 You will see the following Data in the browser
 
-![Terraform local setup(https://raw.githubusercontent.com/MetaArivu/terraform-eks/master/images/terraform-local-server-ex.png)
+![Terraform local setup](https://raw.githubusercontent.com/MetaArivu/terraform-eks/master/images/terraform-local-server-ex.png)
 
