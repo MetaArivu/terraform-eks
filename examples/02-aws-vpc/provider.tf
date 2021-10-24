@@ -1,3 +1,3 @@
 provider "aws" {
-    region = "${var.AWS_REGION}"
+    region = "us-east-2"
 }
