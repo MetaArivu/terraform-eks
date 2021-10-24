@@ -1,9 +1,9 @@
-resource "aws_s3_bucket" "ariu_aws_bucket" {
+resource "aws_s3_bucket" "arivu_aws_bucket" {
   bucket = "${var.bucketname}" //globally shld be unique
   acl    = "private"
 
   tags = {
-    Name        = "ariu_aws_bucket"
+    Name        = "arivu_aws_bucket"
   }
 
   versioning {
