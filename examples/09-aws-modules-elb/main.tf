@@ -12,14 +12,14 @@ module "aws-vpc-ariu" {
 }
 
 module "rt" {
-  source = "./rt"
+  source = "./modules/rt"
   vpc_id = "${module.aws-vpc-ariu.vpc_id}"
   subnet_id = "${module.aws-vpc-ariu.subnet_id}"
   igw_id = "${module.sg.igw_id}" 
 }
 
 module "sg" {
-  source = "./security_group"
+  source = "./modules/security_group"
   vpc_id = "${module.aws-vpc-ariu.vpc_id}"
   sg_id = "${module.sg.sg_id}"
   sg2_id = "${module.sg.sg_id}"
@@ -29,7 +29,7 @@ module "sg" {
 }
 
 module "elb" {
-  source = "./elb"
+  source = "./modules/elb"
   subnet_id = "${module.aws-vpc-ariu.subnet_id}"
   ec2_id = "${module.ec2.ec2_id}"
   sg_id = "${module.sg.sg_id}"
@@ -38,7 +38,7 @@ module "elb" {
 
 
 module "ec2" {
-  source = "./ec2"
+  source = "./modules/ec2"
   subnet_id = "${module.aws-vpc-ariu.subnet_id}"
   sg2_id = "${module.sg.sg2_id}"
   ec2_id = "${module.ec2.ec2_id}"
