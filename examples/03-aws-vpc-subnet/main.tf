@@ -13,7 +13,7 @@ resource "aws_subnet" "arivu-prod-subnet-public-1" {
     vpc_id = "${aws_vpc.arivu-aws-vpc-2.id}"
     cidr_block = "192.168.1.0/24"
     map_public_ip_on_launch = "true" //it makes this a public subnet
-    availability_zone = "var.aws-az"
+    availability_zone = "us-east-2a"
     tags = {
         Name = "arivu-prod-subnet-public-1"
     }
