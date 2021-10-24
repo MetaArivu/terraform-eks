@@ -21,4 +21,4 @@ variable "AMI" {
   }
 }
 variable "subnet_id" {}
-variable "ssh-allowed" {}
+variable "sshbyall" {}
