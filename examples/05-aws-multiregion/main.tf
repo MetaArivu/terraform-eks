@@ -1,15 +1,15 @@
-resource "aws_instance" "ariu-EC2-dev" {
+resource "aws_instance" "arivu-EC2-dev" {
     ami = var.amidev
     instance_type = "t2.micro"
     tags = {
-        Name = "ariu-EC2-dev"
+        Name = "arivu-EC2-dev"
     }
 }
-resource "aws_instance" "ariu-EC2-prod" {
+resource "aws_instance" "arivu-EC2-prod" {
     ami = var.ami
     instance_type = "t2.micro"
     tags = {
-        Name = "ariu-EC2-prod"
+        Name = "arivu-EC2-prod"
     }
    provider = aws.prod
 }
