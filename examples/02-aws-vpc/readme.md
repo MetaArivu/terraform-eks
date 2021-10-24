@@ -8,6 +8,7 @@ terraform init
 ## step 2
 
 terraform plan -out output.tf 
+
 (creates an execution plan "-out" is optinal tag used to save plan in a file output.tf)
 
 ## step 3
