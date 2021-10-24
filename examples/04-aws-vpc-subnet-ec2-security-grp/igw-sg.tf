@@ -1,35 +1,35 @@
 # create Internet Gateway for vpc to connect with internet
-resource "aws_internet_gateway" "ariu-igw" {
-    vpc_id = "${aws_vpc.ariu-vpc.id}"
+resource "aws_internet_gateway" "arivu-igw" {
+    vpc_id = "${aws_vpc.arivu-vpc.id}"
 
     tags = {
-        Name = "ariu-igw"
+        Name = "arivu-igw"
     }
 }
 
 # public subnets route table
-resource "aws_route_table" "ariu-public-rt" {
-    vpc_id = "${aws_vpc.ariu-vpc.id}"
+resource "aws_route_table" "arivu-public-rt" {
+    vpc_id = "${aws_vpc.arivu-vpc.id}"
     route {
         cidr_block = "0.0.0.0/0" 
-        gateway_id = "${aws_internet_gateway.ariu-igw.id}" 
+        gateway_id = "${aws_internet_gateway.arivu-igw.id}" 
     }
 
     tags = {
-        Name = "ariu-public-rt"
+        Name = "arivu-public-rt"
     }
 }
 
 # route table association for the public subnets
-resource "aws_route_table_association" "ariu-rta-public-subnet-3" {
-    subnet_id = "${aws_subnet.ariu-subnet-public-3.id}"
-    route_table_id = "${aws_route_table.ariu-public-rt.id}"
+resource "aws_route_table_association" "arivu-rta-public-subnet-3" {
+    subnet_id = "${aws_subnet.arivu-subnet-public-3.id}"
+    route_table_id = "${aws_route_table.arivu-public-rt.id}"
 }
 
 # security group
 resource "aws_security_group" "sshbyall" {
 
-    vpc_id = "${aws_vpc.ariu-vpc.id}"
+    vpc_id = "${aws_vpc.arivu-vpc.id}"
 
     egress {
         from_port = 0
