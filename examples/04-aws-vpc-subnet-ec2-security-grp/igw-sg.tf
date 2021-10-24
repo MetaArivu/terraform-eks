@@ -21,8 +21,8 @@ resource "aws_route_table" "ariu-public-rt" {
 }
 
 # route table association for the public subnets
-resource "aws_route_table_association" "ariu-rta-public-subnet-1" {
-    subnet_id = "${aws_subnet.ariu-subnet-public-1.id}"
+resource "aws_route_table_association" "ariu-rta-public-subnet-3" {
+    subnet_id = "${aws_subnet.ariu-subnet-public-3.id}"
     route_table_id = "${aws_route_table.ariu-public-rt.id}"
 }
 
