@@ -1,5 +1,5 @@
 resource "aws_instance" "ariu-EC2-dev" {
-    ami = var.ami
+    ami = var.amidev
     instance_type = "t2.micro"
     tags = {
         Name = "ariu-EC2-dev"
