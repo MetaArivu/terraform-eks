@@ -1,4 +1,4 @@
-resource "aws_db_instance" "ariu_rds" {
+resource "aws_db_instance" "arivu_rds" {
   allocated_storage    = 10
   engine               = "mysql"
   engine_version       = "5.7"
