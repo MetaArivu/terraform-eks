@@ -1,7 +1,3 @@
-terraform {
-  required_version = ">= 0.12.0"
-}
-
 data "aws_eks_cluster" "cluster" {
   name = module.eks.cluster_id
 }
@@ -13,37 +9,6 @@ data "aws_eks_cluster_auth" "cluster" {
 data "aws_availability_zones" "available" {
 }
 
-resource "aws_security_group" "worker_group_mgmt_one" {
-  name_prefix = "worker_group_mgmt_one"
-  vpc_id      = module.vpc.vpc_id
-
-  ingress {
-    from_port = 22
-    to_port   = 22
-    protocol  = "tcp"
-
-    cidr_blocks = [
-      "10.0.0.0/8",
-    ]
-  }
-}
-
-resource "aws_security_group" "all_worker_mgmt" {
-  name_prefix = "all_worker_management"
-  vpc_id      = module.vpc.vpc_id
-
-  ingress {
-    from_port = 22
-    to_port   = 22
-    protocol  = "tcp"
-
-    cidr_blocks = [
-      "10.0.0.0/8",
-      "172.16.0.0/12",
-      "192.168.0.0/16",
-    ]
-  }
-}
 
 module "vpc" {
 
@@ -79,63 +44,16 @@ module "eks" {
     {
       name                          = "worker-group-1"
       instance_type                 = "t2.micro"
-      additional_userdata           = "echo foo bar"
+      additional_userdata           = "echo arivu example"
       asg_desired_capacity          = 1
-      additional_security_group_ids = [aws_security_group.worker_group_mgmt_one.id]
+      additional_security_group_ids = [module.arivu-aws-eks-sg.sg_id
+]
     }
   ]
-
 }
 
-resource "kubernetes_deployment" "arivu_tf_example" {
-  metadata {
-    name = "terraform-example"
-    labels = {
-      test = "TerraformHelloWorld"
-    }
-  }
-
-  spec {
-    replicas = 2
-
-    selector {
-      match_labels = {
-        test = "TerraformHelloWorld"
-      }
-    }
-
-    template {
-      metadata {
-        labels = {
-          test = "TerraformHelloWorld"
-        }
-      }
-
-      spec {
-        container {
-          image = "nginx:1.7.8"
-          name  = "arivu_tf_example"
-
-          
-        }
-      }
-    }
-  }
-}
-
-resource "kubernetes_service" "arivu_tf_example" {
-  metadata {
-    name = "terraform-example"
-  }
-  spec {
-    selector = {
-      test = "TerraformHelloWorld"
-    }
-    port {
-      port        = 80
-      target_port = 80
-    }
-
-    type = "LoadBalancer"
-  }
+module "arivu-aws-eks-sg" {
+  source = "./modules/security_grp"
+  vpc_id = module.vpc.vpc_id
+  sg_id = module.arivu-aws-eks-sg.sg_id
 }
