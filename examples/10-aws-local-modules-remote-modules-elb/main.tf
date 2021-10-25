@@ -4,7 +4,7 @@ provider "aws" {
 module "arivu-aws-vpc" {
   source      = "github.com/MetaArivu/terraform-example/modules/vpc"
   //awsvpc_cidr = "192.168.0.0/16"
-  ariu_aws_vpc_cidr = "10.0.0.0/16"
+  arivu_aws_vpc_cidr = "10.0.0.0/16"
   vpc_id      = "${module.arivu-aws-vpc.vpc_id}"
   //aws_subnet_cidr = "10.0.1.0/24"
   arivu_aws_subnet_cidr = "10.0.1.0/24"
