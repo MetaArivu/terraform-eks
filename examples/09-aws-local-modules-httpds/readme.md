@@ -4,7 +4,7 @@ two local modules are created ec2 and vpc both definitions  are present in modul
 
 httpd.sh : has installation script of apache2 
 
-east-region-key-pair is key pair name replace it with your key 
+east-region-key-pair is key pair name replace it with your key  it with your key ec2 module main.tf file and vars.tf
 ## steps
 
 ssh-keygen -f east-region-key-pair 
