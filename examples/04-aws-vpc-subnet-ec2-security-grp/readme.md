@@ -1,4 +1,4 @@
-# aws-vpc-subnet-
+# aws-vpc-subnet
 
 
 creating vpc, subnet. ec2 instance, secuirty group, igw etc   using terraform in aws 
@@ -7,7 +7,8 @@ for vpc and subnet  we are using same resource  definitions  from the previous e
 
 other resources  definition are added into it.
 
-## steps to create
+## tf file description 
+
 
 vpc-subnet.tf : contains the vpc and subnet resource  definition 
 
@@ -19,6 +20,7 @@ provider.tf : cloud provider data
 
 vars.tf : variable declaration file
 
+## steps to create
 
 ## step 1
 terraform init 
