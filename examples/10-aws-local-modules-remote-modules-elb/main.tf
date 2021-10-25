@@ -7,7 +7,7 @@ module "arivu-aws-vpc" {
   ariu_aws_vpc_cidr = "10.0.0.0/16"
   vpc_id      = "${module.arivu-aws-vpc.vpc_id}"
   //aws_subnet_cidr = "10.0.1.0/24"
-  ariu_aws_subnet_cidr = "10.0.1.0/24"
+  arivu_aws_subnet_cidr = "10.0.1.0/24"
   subnet_id = "${module.arivu-aws-vpc.subnet_id}"
 }
 
