@@ -14,12 +14,12 @@ variable "AWS_REGION" {
     default = "us-east-2"
 }
 variable "PRIVATE_KEY_PATH" {
-  default = "east-region-key-pair"
+  default = "awsregion-key-pair"
 }
 
 
 variable "PUBLIC_KEY_PATH" {
-  default = "east-region-key-pair.pub"
+  default = "awsregion-key-pair.pub"
 }
 
 variable sg2_id {}
