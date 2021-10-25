@@ -1,5 +1,12 @@
 # creating  custom  vpc in aws.
 
+main.tf : contains the vpc resource  definition 
+
+provider.tf : cloud provider data 
+
+vars.tf : variable declaration file
+
+
 ## step 1
 terraform init 
 
