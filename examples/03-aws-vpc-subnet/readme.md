@@ -7,7 +7,7 @@ for vpc we are using same resource  definition  from the previous example
 
 subnet definition is added into it.
 
-## steps to create
+## tf file description 
 
 
 main.tf : contains the vpc and subnet resource  definition 
@@ -16,6 +16,7 @@ provider.tf : cloud provider data
 
 vars.tf : variable declaration file
 
+## steps to create
 
 ## step 1
 terraform init 
