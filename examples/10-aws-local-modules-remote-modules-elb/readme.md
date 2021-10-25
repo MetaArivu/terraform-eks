@@ -8,7 +8,7 @@ vpc modules soucre is remote  https://github.com/MetaArivu/terraform-modules/mod
 ec2,rt,security group and elb  are defined locally under modules folder
 
 
-awsregion-key-pair is key pair name replace it with your key 
+awsregion-key-pair is key pair name replace it with your key ec2 module main.tf file and vars.tf
 ## steps
 
 ssh-keygen -f awsregion-key-pair 
