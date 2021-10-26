@@ -2,7 +2,7 @@ provider "aws" {
     region = "us-east-2"
 }
 module "arivu-aws-vpc" {
-  source      = "github.com/MetaArivu/terraform-example/modules/vpc"
+  source      = "github.com/MetaArivu/terraform-modules/modules/vpc"
   //awsvpc_cidr = "192.168.0.0/16"
   arivu_aws_vpc_cidr = "10.0.0.0/16"
   vpc_id      = "${module.arivu-aws-vpc.vpc_id}"
