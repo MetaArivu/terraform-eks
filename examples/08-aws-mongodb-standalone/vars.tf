@@ -1,14 +1,9 @@
-# Region
 
 variable "region" {
   description = "The AWS region to create things in"
   default     = "us-east-2"
 }
 
-
-
-
-# Ubuntu 16.04 LTS
 
 variable "instance_ami" {
   description = "ubuntu"
@@ -23,12 +18,7 @@ variable "instance_type" {
   default     = "t2.micro"
 }
 
-variable "instance_user" {
-  description = "Instance user to use into instance"
-  default     = "ubuntu"
-}
 
-# Key Pair Name
 variable "PRIVATE_KEY_PATH" {
   default = "mongodb-key-pair"
 }
@@ -37,19 +27,16 @@ variable "PUBLIC_KEY_PATH" {
   default = "mongodb-key-pair.pub"
 }
 
-# Vpc
 
 variable "vpc_id" {
   description = "Mongo VPC"
   default     = "vpc-069dd3f23d5ca1b76"
 }
 
-# Subnet
 variable "subnet_ids" {
   default = "subnet-0027a5c84d51ac332"
 }
 
-# Security Group
 
 variable "cidr_blocks" {
   default     = "0.0.0.0/0"
