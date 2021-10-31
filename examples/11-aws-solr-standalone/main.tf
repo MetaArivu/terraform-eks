@@ -52,8 +52,8 @@ resource "aws_security_group" "arviu-aws-solr-sg" {
   }
 
   ingress {
-    from_port   = 27017
-    to_port     = 27017
+    from_port   = 8389
+    to_port     = 8389
     protocol    = "TCP"
     cidr_blocks = ["0.0.0.0/0"]
   }
