@@ -1,8 +1,6 @@
 
 
-###########
-# Instances
-###########
+# Instance secondary-1
 
 resource "aws_instance" "arviu-aws-mongo-secondary" {
   ami                    = "${var.instance_ami}"
@@ -39,9 +37,7 @@ resource "aws_instance" "arviu-aws-mongo-secondary" {
   }
 }
 
-################
-# Security Group
-################
+# Security Group secondary-1
 
 resource "aws_security_group" "arviu-aws-mongo-sg-sec" {
   name   = "arviu-aws-mongo-sg-sec"
@@ -73,9 +69,7 @@ resource "aws_security_group" "arviu-aws-mongo-sg-sec" {
   }
 }
 
-###############
-# Elastic IP
-###############
+# Elastic IP secondary -1
 
 resource "aws_eip" "arivu-aws-mongo-sec-eip" {
   instance = aws_instance.arviu-aws-mongo-secondary.id
