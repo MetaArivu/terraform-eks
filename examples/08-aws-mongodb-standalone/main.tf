@@ -1,8 +1,7 @@
 
 
-###########
-# Instances
-###########
+# Instance primary
+
 
 resource "aws_instance" "arviu-aws-mongo" {
   ami                    = "${var.instance_ami}"
@@ -39,9 +38,8 @@ resource "aws_instance" "arviu-aws-mongo" {
   }
 }
 
-################
-# Security Group
-################
+# Security Group primary
+
 
 resource "aws_security_group" "arviu-aws-mongo-sg" {
   name   = "arviu-aws-mongo-sg"
@@ -73,15 +71,15 @@ resource "aws_security_group" "arviu-aws-mongo-sg" {
   }
 }
 
-###############
-# Elastic IP
-###############
+# Elastic IP primary 
+
 
 resource "aws_eip" "arivu-aws-mongo-eip" {
   instance = aws_instance.arviu-aws-mongo.id
   vpc      = true
 }
 
+# key pair primary 
 
 
 resource "aws_key_pair" "mongodb-key-pair" {
