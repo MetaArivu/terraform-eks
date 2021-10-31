@@ -39,7 +39,11 @@ variable "PUBLIC_KEY_PATH" {
 variable "PUBLIC_KEY_PATH_SEC" {
   default = "mongodb-key-pair-sec.pub"
 }
-# Vpc
+
+variable "PUBLIC_KEY_PATH_SEC_2" {
+  default = "mongodb-key-pair-sec-2.pub"
+}
+
 
 variable "vpc_id" {
   description = "Mongo VPC"
