@@ -1,8 +1,5 @@
 
 
-###########
-# Instances
-###########
 
 resource "aws_instance" "arviu-aws-mongo" {
   ami                    = "${var.instance_ami}"
@@ -46,9 +43,6 @@ resource "aws_instance" "arviu-aws-mongo" {
   }
 }
 
-################
-# Security Group
-################
 
 resource "aws_security_group" "arviu-aws-mongo-sg" {
   name   = "arviu-aws-mongo-sg"
@@ -80,9 +74,7 @@ resource "aws_security_group" "arviu-aws-mongo-sg" {
   }
 }
 
-###############
-# Elastic IP
-###############
+
 
 resource "aws_eip" "arivu-aws-mongo-eip" {
   instance = aws_instance.arviu-aws-mongo.id
@@ -120,6 +112,15 @@ resource "aws_route53_record" "arivu-route-53-record-2" {
   ttl     = "300"
   records = [aws_instance.arviu-aws-mongo-secondary.private_ip]
 }
+
+resource "aws_route53_record" "arivu-route-53-record-3" {
+  zone_id = aws_route53_zone.private.zone_id
+  name    = "node3.arivu.in"
+  type    = "A"
+  ttl     = "300"
+  records = [aws_instance.arviu-aws-mongo-secondary-2.private_ip]
+}
+
 resource "null_resource" "arviu-aws-mongo" {
   connection {
     host = aws_instance.arviu-aws-mongo.public_ip
@@ -134,6 +135,6 @@ resource "null_resource" "arviu-aws-mongo" {
 ]      
     
   }
-    depends_on = [aws_instance.arviu-aws-mongo, aws_route53_record.arivu-route-53-record-1, aws_route53_record.arivu-route-53-record-2]
+    depends_on = [aws_instance.arviu-aws-mongo, aws_route53_record.arivu-route-53-record-1, aws_route53_record.arivu-route-53-record-2, aws_route53_record.arivu-route-53-record-3]
 
 }
