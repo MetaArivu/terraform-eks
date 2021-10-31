@@ -1,8 +1,7 @@
 
 
-###########
-# Instances
-###########
+
+# ec2 Instance
 
 resource "aws_instance" "arviu-aws-solr" {
   ami                    = "${var.instance_ami}"
@@ -15,6 +14,10 @@ resource "aws_instance" "arviu-aws-solr" {
     source      = "solr.sh"
     destination = "/tmp/solr.sh"
   }
+  provisioner "file" {
+    source      = "install_solr_service.sh"
+    destination = "/tmp/install_solr_service.sh"
+  }  
 
   provisioner "remote-exec" {
         inline = [
@@ -36,9 +39,7 @@ resource "aws_instance" "arviu-aws-solr" {
   }
 }
 
-################
 # Security Group
-################
 
 resource "aws_security_group" "arviu-aws-solr-sg" {
   name   = "arviu-aws-solr-sg"
@@ -52,8 +53,8 @@ resource "aws_security_group" "arviu-aws-solr-sg" {
   }
 
   ingress {
-    from_port   = 8389
-    to_port     = 8389
+    from_port   = 8983
+    to_port     = 8983
     protocol    = "TCP"
     cidr_blocks = ["0.0.0.0/0"]
   }
@@ -70,9 +71,7 @@ resource "aws_security_group" "arviu-aws-solr-sg" {
   }
 }
 
-###############
 # Elastic IP
-###############
 
 resource "aws_eip" "arivu-aws-solr-eip" {
   instance = aws_instance.arviu-aws-solr.id
