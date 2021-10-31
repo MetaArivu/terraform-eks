@@ -80,5 +80,5 @@ resource "aws_eip" "arivu-aws-mongo-sec-eip-2" {
 
 resource "aws_key_pair" "mongodb-key-pair-seconday-2" {
     key_name = "mongodb-key-pair-sec-2"
-    public_key = "${file(var.PUBLIC_KEY_PATH_SEC)}"
+    public_key = "${file(var.PUBLIC_KEY_PATH_SEC_2)}"
 }
