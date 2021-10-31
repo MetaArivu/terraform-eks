@@ -2,23 +2,21 @@
 
 # Update list packages and install java
 sudo apt-get update -y
-sudo apt-get install openjdk-11-jdk
-java -version
+sudo apt-get install openjdk-11-jdk -y
 
 
 # download  solr
-cd /opt
-wget https://downloads.apache.org/lucene/solr/8.9.0/solr-8.9.0.tgz
-
+cd /tmp
+wget https://archive.apache.org/dist/lucene/solr/8.6.0/solr-8.6.0.tgz
+ 
+sudo cp -rf  solr-8.6.0.tgz /opt
 
 # install tgz
+cd /opt/
+sudo tar -xvzf solr-8.6.0.tgz
+sudo rm -rf solr-8.6.0/bin/install_solr_service.sh
+sudo cp -rf /tmp/install_solr_service.sh solr-8.6.0/bin/
+echo y | sudo  bash solr-8.6.0/bin/install_solr_service.sh solr-8.6.0.tgz
 
-tar xzf solr-8.9.0.tgz solr-8.9.0/bin/install_solr_service.sh --strip-components=2
-sudo bash ./install_solr_service.sh solr-8.9.0.tgz
 
-
-#start svc
-
-sudo service solr stop
-sudo service solr start
-sudo service solr status
+exit;
