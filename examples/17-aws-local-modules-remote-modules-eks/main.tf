@@ -14,7 +14,7 @@ module "vpc" {
 
   source  = "terraform-aws-modules/vpc/aws"
 
-  name                 = "test-vpc"
+  name                 = "eks-vpc"
   cidr                 = "10.0.0.0/16"
   azs                  = data.aws_availability_zones.available.names
   private_subnets      = ["10.0.1.0/24", "10.0.2.0/24", "10.0.3.0/24"]
@@ -40,20 +40,45 @@ module "eks" {
   cluster_version = "1.17"
   vpc_id       = module.vpc.vpc_id
   subnets      = module.vpc.private_subnets
-  worker_groups = [
-    {
-      name                          = "worker-group-1"
-      instance_type                 = "t2.micro"
-      additional_userdata           = "echo arivu example"
-      asg_desired_capacity          = 1
-      additional_security_group_ids = [module.arivu-aws-eks-sg.sg_id
-]
+  node_groups = {
+    first = {
+      desired_capacity = 1
+      max_capacity     = 10
+      min_capacity     = 1
+
+      instance_type = "t2.micro"
     }
-  ]
+  }
+
+  write_kubeconfig   = true
+
+  workers_additional_policies = [aws_iam_policy.worker_policy.arn]
+    
+
+}
+resource "aws_iam_policy" "worker_policy" {
+  name        = "worker-policy"
+  description = "Worker policy for the ALB Ingress"
+
+  policy = file("iam-policy.json")
 }
 
-module "arivu-aws-eks-sg" {
-  source = "./modules/security_grp"
-  vpc_id = module.vpc.vpc_id
-  sg_id = module.arivu-aws-eks-sg.sg_id
+
+resource "helm_release" "ingress" {
+  name       = "ingress"
+  chart      = "aws-alb-ingress-controller"
+  repository = "https://charts.helm.sh/incubator"
+
+  set {
+    name  = "autoDiscoverAwsRegion"
+    value = "true"
+  }
+  set {
+    name  = "autoDiscoverAwsVpcID"
+    value = "true"
+  }
+  set {
+    name  = "clusterName"
+    value = var.cluster_name
+  }
 }
