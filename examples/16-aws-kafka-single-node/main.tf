@@ -65,13 +65,6 @@ resource "aws_security_group" "arivu-aws-kafka-sg" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 
-  ingress {
-    from_port   = 2181
-    to_port     = 3888
-    protocol    = "TCP"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
-
 
   egress {
     from_port   = 0
@@ -88,15 +81,6 @@ resource "aws_security_group" "arivu-aws-kafka-sg" {
 resource "aws_key_pair" "kafka-key-pair" {
     key_name = "kafka-key-pair"
     public_key = "${file(var.PUBLIC_KEY_PATH)}"
-}
-
-
-resource "aws_route53_zone" "private" {
-  name = "arivu.in"
-
-  vpc {
-     vpc_id = "${var.vpc_id}"
-  }
 }
 
 
