@@ -83,4 +83,23 @@ resource "aws_key_pair" "kafka-key-pair" {
     public_key = "${file(var.PUBLIC_KEY_PATH)}"
 }
 
+resource "null_resource" "kafka-master" {
+   connection {
+    host = aws_instance.arivu-aws-kafka.public_ip
+    agent = true
+    user = "${var.EC2_USER}"
+  }
+
+   provisioner "remote-exec" {
+     inline = [
+            "sh /Softwares/kafka_2.11-2.4.1/bin/zkstart.sh",
+            "sh /Softwares/kafka_2.11-2.4.1/bin/kkstart.sh",
+            "ps aux|grep kafka"
+]      
+    
+  }
+    depends_on = [aws_instance.arivu-aws-kafka]
+
+  
+}
 
