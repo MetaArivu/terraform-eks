@@ -35,6 +35,3 @@ echo "$JAVA_HOME"
  rm -rf /Softwares/kafka_2.11-2.4.1/config/zookeeper.properties
  cp -rf /tmp/zookeeper.properties /Softwares/kafka_2.11-2.4.1/config/
  cp -rf /tmp/server.properties /Softwares/kafka_2.11-2.4.1/config/
-
-nohup sh /Softwares/kafka_2.11-2.4.1/bin/zookeeper-server-start.sh   /Softwares/kafka_2.11-2.4.1/config/zookeeper.properties & 
-nohup sh /Softwares/kafka_2.11-2.4.1/bin/kafka-server-start.sh   /Softwares/kafka_2.11-2.4.1/config/server.properties & 
