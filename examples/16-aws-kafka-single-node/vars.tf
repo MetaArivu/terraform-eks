@@ -35,14 +35,6 @@ variable "PUBLIC_KEY_PATH" {
 }
 
 
-
-variable "PUBLIC_KEY_PATH_SEC" {
-  default = "kafka-key-pair-sec.pub"
-}
-
-variable "PUBLIC_KEY_PATH_SEC2" {
-  default = "kafka-key-pair-sec2.pub"
-}
 # Vpc
 
 variable "vpc_id" {
