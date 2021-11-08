@@ -6,7 +6,7 @@ resource "aws_instance" "arviu-aws-mongo-secondary" {
   ami                    = "${var.instance_ami}"
   instance_type          = "${var.instance_type}"
   subnet_id              = "${var.subnet_ids}"
-  vpc_security_group_ids = ["${aws_security_group.arviu-aws-mongo-sg.id}"]
+  vpc_security_group_ids = ["${aws_security_group.arviu-aws-mongo-sg-sec.id}"]
 
   provisioner "file" {
     source      = "mongod.conf"
