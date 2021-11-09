@@ -3,7 +3,7 @@
 echo " Lambda : App Setup (Env, ConfigMap, Presets, Secrets)"
 echo "Install the Apps: (Env, ConfigMap, Presets, Secrets)"
 kubectl apply  --filename lambda-namespace.yaml
-kubectl apply  --filename aws-lambda-ingress.yaml
+kubectl apply  --filename lambda-ingress-aws.yaml
 kubectl apply  --filename ws-deploy.yaml
 kubectl apply  --filename ws-service.yaml
 kubectl apply  --filename cart-deploy.yaml
