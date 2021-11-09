@@ -37,7 +37,7 @@ module "vpc" {
 module "eks" {
   source       = "terraform-aws-modules/eks/aws"  
   cluster_name    = var.cluster_name
-  cluster_version = "1.17"
+  cluster_version = "1.21"
   vpc_id       = module.vpc.vpc_id
   subnets      = module.vpc.private_subnets
   node_groups = {
@@ -46,7 +46,6 @@ module "eks" {
       max_capacity     = 10
       min_capacity     = 1
 
-      instance_type = "t2.micro"
     }
   }
 
@@ -66,8 +65,7 @@ resource "aws_iam_policy" "worker_policy" {
 
 resource "helm_release" "ingress" {
   name       = "ingress"
-  chart      = "aws-alb-ingress-controller"
-  repository = "https://charts.helm.sh/incubator"
+  chart      = "eks/aws-load-balancer-controller"
 
   set {
     name  = "autoDiscoverAwsRegion"
