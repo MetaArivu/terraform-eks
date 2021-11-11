@@ -12,14 +12,6 @@ spec:
   rules:
   - http:
       paths:
-      - path: /
-        pathType: Prefix
-        backend:
-          service:
-          # UI Service
-           name: ws-service
-           port:
-             number: 80      
       - path: /api/v1/cart/
         pathType: Prefix
         backend:
@@ -44,3 +36,11 @@ spec:
            name: payment-service
            port:
              number: 80             
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+          # UI Service
+           name: ws-service
+           port:
+             number: 80      
