@@ -1,0 +1,17 @@
+
+<amexio-spinner [show]="_cService.showLoader" [type]="'fadingcircle'" [vertical-position]="'center'"
+                [horizontal-position]="'center'" [color]="'blue'">
+</amexio-spinner>
+
+<amexio-notification
+  [data]="_cService.infoMsgCollection"
+  [vertical-position]="'bottom'"
+  [horizontal-position]="'center'"
+  [close-on-escape] ="true"
+  [background-color]="'black'"
+  [auto-dismiss-msg]="true"
+  [icon]="'fa fa-check-square-o fa-fw'"
+  [foreground-color]="'white'"
+  [auto-dismiss-msg-interval]="3000">
+
+</amexio-notification>
