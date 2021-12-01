@@ -4,7 +4,7 @@ metadata:
  name: productreviewms-dr
  namespace: shoppingportal
 spec:
- host: "*.default.svc.cluster.local"
+ host: "*.shoppingportal2.svc.cluster.local"
  trafficPolicy:
    tls:
      mode: DISABLE
