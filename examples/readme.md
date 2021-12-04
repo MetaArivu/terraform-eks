@@ -1,6 +1,6 @@
 # AWS CLI Installation
 
-## steps for latest awscli on linux and macos
+## Steps for latest awscli on linux and macos
 
 ```
 $ curl "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip" -o "awscli-bundle.zip"
@@ -10,7 +10,7 @@ $ unzip awscli-bundle.zip
 $ sudo ./awscli-bundle/install -i /usr/local/aws -b /usr/local/bin/aws
 ```
 
-## verify aws version
+## Verify aws version
 ```
 $ aws --version
 ```
@@ -24,20 +24,27 @@ Sign in to the AWS Management Console and open the IAM console at https://consol
 In the navigation pane, choose Users.
 ![MS](https://raw.githubusercontent.com/MetaArivu/terraform-quickstart/main/images/aws-00-add-user-menu.png)
 
+Click on Add Users
 ![MS](https://raw.githubusercontent.com/MetaArivu/terraform-quickstart/main/images/aws-01-add-user.png)
 
+Enter user Name and select "Access Key - programmatic access" and create custom password.
 ![MS](https://raw.githubusercontent.com/MetaArivu/terraform-quickstart/main/images/aws-02-Step-1-add-user.png)
 
+Click "Create Group Button"
 ![MS](https://raw.githubusercontent.com/MetaArivu/terraform-quickstart/main/images/aws-03-Step-2-add-group.png)
 
+Enter the Group Name and Select "Administration Access"
 ![MS](https://raw.githubusercontent.com/MetaArivu/terraform-quickstart/main/images/aws-04-Step-2-add-group.png)
 
 ![MS](https://raw.githubusercontent.com/MetaArivu/terraform-quickstart/main/images/aws-05-Step-2-view-group.png)
 
+Add Tags (Optional)
 ![MS](https://raw.githubusercontent.com/MetaArivu/terraform-quickstart/main/images/aws-06-Step-3-add-tags.png)
 
+Review the User Details
 ![MS](https://raw.githubusercontent.com/MetaArivu/terraform-quickstart/main/images/aws-07-Step-4-review.png)
 
+Download the Credentials in CSV Format
 ![MS](https://raw.githubusercontent.com/MetaArivu/terraform-quickstart/main/images/aws-08-Step-5-add-user-complete.png)
 
 Choose the name of the user whose access keys you want to create, and then choose the Security credentials tab.
