@@ -1,13 +1,15 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: productreview-deploy
-  namespace: shoppingportal2
+  name: k8uiworkshop-deploy
+  namespace: shoppingportal
+  labels:
+    name: k8uiworkshop 
 spec:
   replicas: 1
   selector:
     matchLabels:
-      name: productreviewms
+      name: k8uiworkshop
       zone: prod
   minReadySeconds: 10
   strategy:
@@ -18,22 +20,17 @@ spec:
   template:
     metadata:
       labels:
-        name: productreviewms
+        name: k8uiworkshop
         version: v1
         release: stable
         tier: fe
         zone: prod
         managed-by: m2
     spec:
+      serviceAccountName: ui-sa
       containers:
-        - name: productreview-ctr
-          image: metamagicglobal/productreviewms
+        - name: k8uiworkshop-ctr
+          image: metamagicglobal/k8uiworkshop:v1.0
           imagePullPolicy: Always
           ports:
-          - containerPort: 8082
-          livenessProbe:
-            httpGet:
-              path: /productreviewms/check/live
-              port: 8082
-            initialDelaySeconds: 15
-            periodSeconds: 15
+          - containerPort: 80
