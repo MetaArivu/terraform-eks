@@ -1,31 +1,19 @@
-# AWSCLI Installation
+# AWS CLI Installation
 
 ## steps for latest awscli on linux and macos
 
-curl "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip" -o "awscli-bundle.zip"
+```
+$ curl "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip" -o "awscli-bundle.zip"
 
-unzip awscli-bundle.zip
+$ unzip awscli-bundle.zip
 
-sudo ./awscli-bundle/install -i /usr/local/aws -b /usr/local/bin/aws
-
+$ sudo ./awscli-bundle/install -i /usr/local/aws -b /usr/local/bin/aws
+```
 
 ## verify aws version
- 
- aws --version
- 
- 
- ## configure the environment 
- 
-aws configure
-
-AWS Access Key ID [None]: AKIAIOSFODNN7EXAMPLE
-
-AWS Secret Access Key [None]: wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
-
-Default region name [None]: us-west-2
-
-Default output format [None]: json
-
+```
+$ aws --version
+```
 
 ## Access key ID and secret access key
 
@@ -34,6 +22,23 @@ To create access keys for an IAM user
 Sign in to the AWS Management Console and open the IAM console at https://console.aws.amazon.com/iam/.
 
 In the navigation pane, choose Users.
+![MS](https://raw.githubusercontent.com/MetaArivu/terraform-quickstart/main/images/aws-00-add-user-menu.png)
+
+![MS](https://raw.githubusercontent.com/MetaArivu/terraform-quickstart/main/images/aws-01-add-user.png)
+
+![MS](https://raw.githubusercontent.com/MetaArivu/terraform-quickstart/main/images/aws-02-Step-1-add-user.png)
+
+![MS](https://raw.githubusercontent.com/MetaArivu/terraform-quickstart/main/images/aws-03-Step-2-add-group.png)
+
+![MS](https://raw.githubusercontent.com/MetaArivu/terraform-quickstart/main/images/aws-04-Step-2-add-group.png)
+
+![MS](https://raw.githubusercontent.com/MetaArivu/terraform-quickstart/main/images/aws-05-Step-2-view-group.png)
+
+![MS](https://raw.githubusercontent.com/MetaArivu/terraform-quickstart/main/images/aws-06-Step-3-add-tags.png)
+
+![MS](https://raw.githubusercontent.com/MetaArivu/terraform-quickstart/main/images/aws-07-Step-4-review.png)
+
+![MS](https://raw.githubusercontent.com/MetaArivu/terraform-quickstart/main/images/aws-08-Step-5-add-user-complete.png)
 
 Choose the name of the user whose access keys you want to create, and then choose the Security credentials tab.
 
@@ -51,3 +56,12 @@ Keep the keys confidential in order to protect your AWS account and never email 
 
 After you download the .csv file, choose Close. When you create an access key, the key pair is active by default, and you can use the pair right away.
 
+## Configure the AWS CLI Environment 
+```
+$ aws configure
+
+AWS Access Key ID [None]: AKIAIOSFODNN7EXAMPLE
+AWS Secret Access Key [None]: wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+Default region name [None]: us-west-2
+Default output format [None]: json
+```
