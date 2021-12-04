@@ -1,7 +1,7 @@
 #!/bin/bash
 
-echo " Lambda : App Setup (Env, ConfigMap, Presets, Secrets)"
-echo "Install the Apps: (Env, ConfigMap, Presets, Secrets)"
+echo "Mock Service : Installations"
+echo "4.1 Install the Apps: (UI, Cart, Order, Payment)"
 kubectl apply  --filename lambda-namespace.yaml
 kubectl apply  --filename lambda-ingress-aws.yaml
 kubectl apply  --filename ws-deploy.yaml
