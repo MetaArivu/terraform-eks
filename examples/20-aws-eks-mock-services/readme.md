@@ -1,7 +1,13 @@
-## EKS INGRESS EXAMPLE
+## EKS Mock Services Ingress Example
 
-## steps
+## Setup EKS
 
-1 aws eks --region us-east-2  update-kubeconfig --name terraform-eks   
+```
+$ aws eks --region us-east-2  update-kubeconfig --name terraform-eks   
+``
 
-2 ./eks.sh
+## Install Mock Services App
+
+```
+$ ms-install.sh
+```
