@@ -2,10 +2,11 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: productreviewservice
-  namespace: shoppingportal
+  name: productreviewservice-port
+  namespace: shoppingportal2
   labels:
-    name: productreview  
+    name: productreview 
+    app: shopping-app
 spec:
   selector: 
     name: productreviewms
