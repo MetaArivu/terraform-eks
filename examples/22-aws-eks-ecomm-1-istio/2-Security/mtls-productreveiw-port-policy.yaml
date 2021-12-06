@@ -1,0 +1,12 @@
+apiVersion: security.istio.io/v1beta1
+kind: PeerAuthentication
+metadata:
+  name: "productreveiw-port-policy"
+  namespace: "shoppingportal"
+spec:
+  selector:
+     matchLabels:
+       app: shopping-app
+  portLevelMtls:
+    80:
+      mode: DISABLE
