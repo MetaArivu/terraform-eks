@@ -9,4 +9,4 @@ spec:
        app: shopping-app
   portLevelMtls:
     80:
-      mode: DISABLE
+      mode: STRICT
