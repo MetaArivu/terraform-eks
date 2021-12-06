@@ -6,16 +6,10 @@
 
 3 ways to enable MTLS
 
-1.mesh-wide
+### 1.mesh-wide
 
-echo "..."
 
 kubectl apply -f 2-Security/mtls-mesh.yaml
-
-echo "..."
-
-## TEST:
-
 
 ./ms-install-apps (shoppingportal)
 
@@ -52,36 +46,37 @@ kubectl delete -f 2-Security/mtls-mesh.yaml
 
 
 
-2. workload-specific
+### 2. workload-specific
 
 Applicable for specific service only
 
 
 kubectl apply -f 2-Security/mtls-service.yaml
 
-login into pod  web pod:
+#### login into pod  web pod:
 
 kubectl exec -it web /bin/bash  -n networking
 
-curl command to test should give connect reset error 
+#### curl command to test should give connect reset error 
 
 curl http://k8uiworkshopservice.shoppingportal.svc.cluster.local/ui
 
-check other service from same namespace should pass and give app is live
+##### check other service from same namespace should pass and give app is live
 
 curl http://productreviewservice.shoppingportal.svc.cluster.local/productreviewms/check/live
 
 
-3. namespace-wide
+### 3. namespace-wide
 
 kubectl apply -f 2-Security/mtls-shoppingportal.yaml
 
 
-login into pod  web pod:
+#### login into pod  web pod:
+
+kubectl exec -it web /bin/bash  -n networking
 
 
-
-curl command to test should give connect reset error 
+#### curl command to test should give connect reset error 
 
 curl http://productreviewservice.shoppingportal.svc.cluster.local/productreviewms/check/live
 
