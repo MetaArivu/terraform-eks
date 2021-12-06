@@ -21,10 +21,13 @@ kubectl apply -f test-app/networking-ns.yaml
 
 kubectl apply -f test-app/web-pod.yml
 
-login into pod  web pod:
+##### login into pod  web pod:
 
 
 kubectl exec -it web /bin/bash  -n networking
+
+
+#### curl command to test 
 
 curl http://productreviewservice.shoppingportal2.svc.cluster.local/productreviewms/check/live
 
@@ -39,10 +42,6 @@ repeat the step curl command
 error should come 
 
 curl: (56) Recv failure: Connection reset by peer
-
-echo "delete Mesh Policy"
-
-kubectl delete -f 2-Security/mtls-mesh.yaml
 
 
 
