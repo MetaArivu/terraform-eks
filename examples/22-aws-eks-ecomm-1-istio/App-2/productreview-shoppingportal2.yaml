@@ -3,13 +3,14 @@ kind: Deployment
 metadata:
   name: productreview-deploy
   namespace: shoppingportal2
+  labels:
+    name: productreview
 spec:
   replicas: 1
   selector:
     matchLabels:
       name: productreviewms
       zone: prod
-      app: shopping-app
   minReadySeconds: 10
   strategy:
     type: RollingUpdate
@@ -26,15 +27,10 @@ spec:
         zone: prod
         managed-by: m2
     spec:
+      serviceAccountName: productreviewms-sa   
       containers:
         - name: productreview-ctr
           image: metamagicglobal/productreviewms
           imagePullPolicy: Always
           ports:
           - containerPort: 8082
-          livenessProbe:
-            httpGet:
-              path: /productreviewms/check/live
-              port: 8082
-            initialDelaySeconds: 15
-            periodSeconds: 15
