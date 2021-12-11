@@ -1,43 +1,16 @@
-resource "aws_dynamodb_table" "basic-dynamodb-table" {
-  name           = "var.name"
-  billing_mode   = "PROVISIONED"
-  read_capacity  = 20
-  write_capacity = 20
-  hash_key       = "var.hash"
-  range_key      = "var.range"
+resource "aws_timestreamwrite_database" "arviu-aws-timestreamdb" {
+  database_name = "arviu-aws-timestreamdb"
+}
+resource "aws_timestreamwrite_table" "arviu-aws-timestreamdb-table" {
+  database_name = aws_timestreamwrite_database.arviu-aws-timestreamdb.database_name
+  table_name    = "arviu-aws-timestreamdb-example"
 
-  attribute {
-    name = "empId"
-    type = "S"
-  }
-
-  attribute {
-    name = "Department"
-    type = "S"
-  }
-
-  attribute {
-    name = "TopScore"
-    type = "N"
-  }
-
-  ttl {
-    attribute_name = "TimeToExist"
-    enabled        = false
-  }
-
-  global_secondary_index {
-    name               = "GameTitleIndex"
-    hash_key           = "GameTitle"
-    range_key          = "TopScore"
-    write_capacity     = 10
-    read_capacity      = 10
-    projection_type    = "INCLUDE"
-    non_key_attributes = ["UserId"]
+  retention_properties {
+    magnetic_store_retention_period_in_days = 30
+    memory_store_retention_period_in_hours  = 8
   }
 
   tags = {
-    Name        = "dynamodb-table-1"
-    Environment = "production"
+    Name = "arviu-aws-timestreamdb-example"
   }
 }
