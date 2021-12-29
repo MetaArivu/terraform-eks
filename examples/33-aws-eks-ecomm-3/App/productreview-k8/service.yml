@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: productreview-svc
+  name: product-review-service
   namespace: shoppingportal
   labels:
     app: productreview-svc

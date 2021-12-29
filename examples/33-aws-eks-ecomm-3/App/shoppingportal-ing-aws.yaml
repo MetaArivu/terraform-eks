@@ -21,7 +21,7 @@ spec:
           servicePort: 80
       - path: /product-review-service/*
         backend:
-          serviceName: productreview-svc
+          serviceName: product-review-service
           servicePort: 80
       - path: /payment-service/*
         backend:
@@ -34,4 +34,12 @@ spec:
       - path: /order-service/*
         backend:
           serviceName: order-service
-          servicePort: 80                               
+          servicePort: 80  
+      - path: /shopping-cart-cmd-service/*
+        backend:
+          serviceName: shopping-cart-cmd-service
+          servicePort: 80 
+      - path: /shopping-cart-query-service/*
+        backend:
+          serviceName: shopping-cart-query-service
+          servicePort: 80                                            
