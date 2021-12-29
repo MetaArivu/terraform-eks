@@ -42,4 +42,8 @@ spec:
       - path: /shopping-cart-query-service/*
         backend:
           serviceName: shopping-cart-query-service
-          servicePort: 80                                            
+          servicePort: 80     
+      - path: /zipkin-svc/*
+        backend:
+          serviceName: zipkin-svc
+          servicePort: 80                                                   
