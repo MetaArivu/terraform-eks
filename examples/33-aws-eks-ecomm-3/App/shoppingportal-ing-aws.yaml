@@ -1,4 +1,4 @@
-apiVersion: extensions/v1beta1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: workshop-ingress
@@ -11,39 +11,66 @@ spec:
   rules:
   - http:
       paths:
-      - path: /ui/*
+      - path: /ui/
+        pathType: Prefix
         backend:
-          serviceName: ms-sp-ui-svc
-          servicePort: 80
-      - path: /product-service/*
+          service:
+            name: ms-sp-ui-svc
+            port: 
+             number: 80
+      - path: /product-service/
+        pathType: Prefix
         backend:
-          serviceName: product-service
-          servicePort: 80
-      - path: /product-review-service/*
+          service:
+            name: product-service
+            port: 
+              number: 80
+      - path: /product-review-service/
+        pathType: Prefix
         backend:
-          serviceName: product-review-service
-          servicePort: 80
-      - path: /payment-service/*
+          service:
+            name: product-review-service
+            port: 
+              number: 80
+      - path: /payment-service/
+        pathType: Prefix
         backend:
-          serviceName: payment-service
-          servicePort: 80 
-      - path: /user-svc/*
+           service:    
+             name: payment-service
+             port: 
+               number: 80 
+      - path: /user-svc/
+        pathType: Prefix
         backend:
-          serviceName: user-svc
-          servicePort: 80 
-      - path: /order-service/*
+          service:
+            name: user-svc
+            port: 
+              number: 80
+      - path: /order-service/
+        pathType: Prefix
         backend:
-          serviceName: order-service
-          servicePort: 80  
-      - path: /shopping-cart-cmd-service/*
+          service:
+            name: order-service
+            port: 
+              number: 80
+      - path: /shopping-cart-cmd-service/
+        pathType: Prefix
         backend:
-          serviceName: shopping-cart-cmd-service
-          servicePort: 80 
-      - path: /shopping-cart-query-service/*
+          service:
+            name: shopping-cart-cmd-service
+            port: 
+              number: 80
+      - path: /shopping-cart-query-service/
+        pathType: Prefix
         backend:
-          serviceName: shopping-cart-query-service
-          servicePort: 80     
-      - path: /zipkin-svc/*
+          service:
+            name: shopping-cart-query-service
+            port: 
+              number: 80  
+      - path: /
+        pathType: Prefix
         backend:
-          serviceName: zipkin-svc
-          servicePort: 80                                                   
+          service:
+            name: zipkin-svc
+            port: 
+              number: 80                                                   
