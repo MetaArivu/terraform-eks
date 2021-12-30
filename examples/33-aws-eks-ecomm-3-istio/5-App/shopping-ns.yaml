@@ -4,3 +4,4 @@ metadata:
     name: shoppingportal
     labels:
        name: shoppingportal
+       istio-injection: enabled
