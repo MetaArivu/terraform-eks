@@ -11,9 +11,22 @@ spec:
   http:
   - match:
     - uri:
-        prefix: /ui/
+        prefix: /ui
+      headers:
+        user-agent:
+          regex: ".*Firefox.*"
     route:
     - destination:
         host: ms-sp-ui-svc.shoppingportal.svc.cluster.local
+        subset: canary # match v2 only
         port:
-          number: 80                                        
+          number: 80           
+  - match:
+    - uri:
+        prefix: /ui
+    route:
+    - destination:
+        host: ms-sp-ui-svc.shoppingportal.svc.cluster.local
+        subset: stable # match v1 only
+        port:
+          number: 80                                      

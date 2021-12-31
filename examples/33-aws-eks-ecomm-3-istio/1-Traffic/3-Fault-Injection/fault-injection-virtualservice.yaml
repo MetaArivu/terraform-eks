@@ -14,7 +14,7 @@ spec:
         prefix: /ui
     route:
     - destination:
-        host: k8uiworkshopservice.shoppingportal.svc.cluster.local
+        host: ms-sp-ui-svc.shoppingportal.svc.cluster.local
         port:
           number: 80
     fault: #This will put delay of 2 sec for every request to productreview service

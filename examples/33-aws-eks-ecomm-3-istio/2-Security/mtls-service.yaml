@@ -1,11 +1,11 @@
 apiVersion: security.istio.io/v1beta1
 kind: PeerAuthentication
 metadata:
-  name: "k8uiworkshop-peer-policy"
+  name: "shoppingportalui-peer-policy"
   namespace: "shoppingportal"
 spec:
   selector:
     matchLabels:
-       name: k8uiworkshop 
+      app: shoppingportalui
   mtls:
     mode: STRICT

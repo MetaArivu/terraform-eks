@@ -6,7 +6,7 @@ metadata:
 spec:
   selector:
     matchLabels:
-      name: productreviewms
+      app: productreview-svc
   action: ALLOW
   rules:
   - to:
