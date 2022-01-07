@@ -22,7 +22,6 @@ kubectl apply -f 1-Traffic/product-review-svc-vs.yaml
 kubectl apply -f 1-Traffic/payment-virtualservice.yaml
 kubectl apply -f 1-Traffic/order-svc-vs.yaml
 kubectl apply -f 1-Traffic/shoppingportal-destination-rules.yml
-kubectl apply -f 1-Traffic/user-svc-vs.yaml
 kubectl apply -f 1-Traffic/ms-cart-cmd-vs.yaml
 kubectl apply -f 1-Traffic/ms-cart-query-vs.yaml
 kubectl apply -f 1-Traffic/zipkin-vs.yaml

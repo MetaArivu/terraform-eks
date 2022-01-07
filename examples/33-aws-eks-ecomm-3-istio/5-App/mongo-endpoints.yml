@@ -7,7 +7,7 @@ subsets:
   -
     addresses:
       -
-        ip: 10.0.6.111
+        ip: 10.0.6.204
     ports:
       -
         port: 27017
