@@ -14,14 +14,14 @@ export FORTIO_POD=$(kubectl get pods -l app=fortio -o 'jsonpath={.items[0].metad
 
 3) Log in and use the fortio tool to call productreview
 
-kubectl exec "$FORTIO_POD" -c fortio -- /usr/bin/fortio curl -quiet http://productreviewservice.shoppingportal.svc.cluster.local/productreviewms/check/live
+kubectl exec "$FORTIO_POD" -c fortio -- /usr/bin/fortio curl -quiet http://product-review-service.shoppingportal.svc.cluster.local/product-review-service/welcome
 
 4 ) Call the service with 3 concurrent connections (-c 3) and send 30 requests (-n 30):
 
-kubectl exec "$FORTIO_POD" -c fortio -- /usr/bin/fortio load -c 3 -qps 0 -n 30 -loglevel Warning http://productreviewservice.shoppingportal.svc.cluster.local/productreviewms/check/live
+kubectl exec "$FORTIO_POD" -c fortio -- /usr/bin/fortio load -c 3 -qps 0 -n 30 -loglevel Warning http://product-review-service.shoppingportal.svc.cluster.local/product-review-service/welcome
 
 5) Query the istio-proxy stats to see more
 
-kubectl exec "$FORTIO_POD" -c istio-proxy -- pilot-agent request GET stats | grep productreviewservice.shoppingportal.svc.cluster.local | grep pending
+kubectl exec "$FORTIO_POD" -c istio-proxy -- pilot-agent request GET stats | grep product-review-service.shoppingportal.svc.cluster.local | grep pending
 
 
