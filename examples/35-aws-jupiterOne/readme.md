@@ -8,7 +8,7 @@
 
 2) For Intergating Aws : Go setting option and select Intregation
 
-3)In intergration page select aws 
+3) In intergration page select aws 
 
 4) click on Add the configuration.
 
