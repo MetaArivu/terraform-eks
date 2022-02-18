@@ -79,9 +79,67 @@ The output of the result will have arn of the role COPY that for future use.
 
 
 
+6) For fetching the latest update run the integration 
+
+  go to Integration > aws > aws-demo > setting-page
+
+
+   click on play button of  configuration setting page
+   
+   
+   
+  ![MS](https://raw.githubusercontent.com/MetaArivu/terraform-quickstart/main/images/run-integration-0.jpeg)
+
+    
+  ![MS](https://raw.githubusercontent.com/MetaArivu/terraform-quickstart/main/images/run-play-int.jpeg)
 
   
   
+  ![MS](https://raw.githubusercontent.com/MetaArivu/terraform-quickstart/main/images/run-integration.jpeg)
+  
+  
+  
+ 7) Once Integration run is done run job status will be updated 
+
+  ![MS](https://raw.githubusercontent.com/MetaArivu/terraform-quickstart/main/images/jobststatus.png)
+
+
+
+8) check the dashboard for the latest fetch 
+
+
+s3 dashboard
+
+  ![MS](https://raw.githubusercontent.com/MetaArivu/terraform-quickstart/main/images/d1.png)
+
+aws resource dashboard
+
+  ![MS](https://raw.githubusercontent.com/MetaArivu/terraform-quickstart/main/images/d2.png)
+  
+  lambda 
+
+  ![MS](https://raw.githubusercontent.com/MetaArivu/terraform-quickstart/main/images/d3.png)
+
+
+
+9) Run the J1 query to find the particular resource in query anywhere section.
+
+  status bar:
+  
+  ![MS](https://raw.githubusercontent.com/MetaArivu/terraform-quickstart/main/images/j1.png)
+
+  
+  
+  search s3 records
+  
+  ![MS](https://raw.githubusercontent.com/MetaArivu/terraform-quickstart/main/images/j2.png)
+  
+  
+  
+  search s3 publicacl not available
+  
+  
+  ![MS](https://raw.githubusercontent.com/MetaArivu/terraform-quickstart/main/images/j3.png)
 
 
 
