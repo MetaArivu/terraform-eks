@@ -132,11 +132,23 @@ aws resource dashboard
   
   search s3 records
   
+  query: 
+  
+  1) Find aws_s3_bucket with secureTransport != true as bucket
+
+
+  2) Find aws_s3_bucket with encrypted != true as bucket
+
+  
   ![MS](https://raw.githubusercontent.com/MetaArivu/terraform-quickstart/main/images/j2.png)
   
   
   
   search s3 blockpublicacl not true
+  
+  query:
+  
+  Find aws_s3_bucket with blockPublicAcls != true as bucket
   
   
   ![MS](https://raw.githubusercontent.com/MetaArivu/terraform-quickstart/main/images/j3.png)
