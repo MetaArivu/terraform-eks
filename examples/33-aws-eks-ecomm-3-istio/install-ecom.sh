@@ -11,9 +11,9 @@ kubectl apply -f 5-App/order-k8s/
 kubectl apply -f 5-App/payment-k8s/
 kubectl apply -f 5-App/productreview-k8s/
 kubectl apply -f 5-App/ms.shopping.cart.aggregator.service/ms-k8-yml/
-kubectl apply -f 5-App/ms.shopping.cart.cmd.service/ms-k8-yml/
-kubectl apply -f 5-App/ms.shopping.cart.query.service/ms-k8-yml/
-kubectl apply -f 5-App/pms.shopping.cart.enhancer.service/ms-k8-yml/
+kubectl apply -f 5-App/ms.shopping.cart.cmd.service/k8-yml/
+kubectl apply -f 5-App/ms.shopping.cart.query.service/k8-yml/
+kubectl apply -f 5-App/ms.shopping.cart.enhancer.service/k8-yml/
 kubectl apply -f 1-Traffic/shoppingportal-1-gw.yaml
 kubectl apply -f 1-Traffic/ui-svc-vs.yaml
 kubectl apply -f 1-Traffic/user-svc-vs.yaml

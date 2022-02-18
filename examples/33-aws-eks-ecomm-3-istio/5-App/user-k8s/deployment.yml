@@ -32,18 +32,6 @@ spec:
           imagePullPolicy: Always
           ports:
           - containerPort: 8080
-          livenessProbe:
-            httpGet:
-              path: /user-svc/live
-              port: 8080
-            initialDelaySeconds: 15
-            periodSeconds: 15
-          readinessProbe:
-             httpGet:
-               path: /user-svc/ready
-               port: 8080
-             initialDelaySeconds: 15
-             periodSeconds: 15              
           env:
           - name: SPRING_PROFILES_ACTIVE
             value: "prod"        
