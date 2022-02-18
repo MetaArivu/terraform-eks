@@ -26,9 +26,9 @@ COPY those for future use in terraform script.
 ## Terraform Edits
 
 
-1) Edit vars.tf file replace "extId:" with external ID and "acctID:" with AccountID
+1) Edit main.tf file replace "extId:" with external ID and "acctID:" with AccountID
 
-save the vars.tf.
+save the main.tf.
 
 2) terraform init 
 
