@@ -58,7 +58,7 @@ The output of the result will have arn of the role COPY that for future use.
 
 1) Navigate within JupiterOne to Apps -> Insights to add a board
 
-![MS](https://raw.githubusercontent.com/MetaArivu/terraform-quickstart/main/images/j1-insight.jpeg)
+![MS](https://raw.githubusercontent.com/MetaArivu/terraform-quickstart/main/images/j1-insight.png)
 
 
 2) Expand the left sidebar by hitting the > carrot
