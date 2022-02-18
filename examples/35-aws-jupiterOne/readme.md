@@ -43,7 +43,7 @@ Here You will create the IAM role for  acessing aws resources by JupiterOne
 The output of the result will have arn of the role COPY that for future use.
 
 
-## Jupiter ADD configuration 
+## JupiterOne ADD configuration 
 
 
 1) Give the Name to the configuration 
@@ -51,6 +51,24 @@ The output of the result will have arn of the role COPY that for future use.
 2) Paste the role arn we have copied from the output of terraform.
 
 3) save the configuration
+
+## JupiterOne ADD Dashboard.
+
+## Import prebuilt Insights Dashboards
+
+1) Navigate within JupiterOne to Apps -> Insights to add a board
+
+2) Expand the left sidebar by hitting the > carrot
+
+3) Hit the Add button + choose whether you want a personal or team board
+
+
+
+
+
+
+
+
 
 
 
