@@ -136,7 +136,7 @@ aws resource dashboard
   
   
   
-  search s3 publicacl not available
+  search s3 blockpublicacl not true
   
   
   ![MS](https://raw.githubusercontent.com/MetaArivu/terraform-quickstart/main/images/j3.png)
