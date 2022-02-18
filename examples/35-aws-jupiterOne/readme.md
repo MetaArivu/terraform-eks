@@ -58,9 +58,34 @@ The output of the result will have arn of the role COPY that for future use.
 
 1) Navigate within JupiterOne to Apps -> Insights to add a board
 
+![MS](https://raw.githubusercontent.com/MetaArivu/terraform-quickstart/main/images/j1-insight.jpeg)
+
+
 2) Expand the left sidebar by hitting the > carrot
 
+
 3) Hit the Add button + choose whether you want a personal or team board
+
+
+
+4) select from available dashboard or add your json.
+  
+![MS](https://raw.githubusercontent.com/MetaArivu/terraform-quickstart/main/images/dashboard-pick.jpeg)
+  
+  
+5) For example selected  the aws-resource dashboard.
+
+![MS](https://raw.githubusercontent.com/MetaArivu/terraform-quickstart/main/images/aws-resource.jpeg)
+
+
+
+
+  
+  
+
+
+
+
 
 
 
