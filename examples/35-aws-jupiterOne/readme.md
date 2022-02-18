@@ -8,13 +8,19 @@
 
 2) For Intergating Aws : Go setting option and select Intregation
 
+![MS](https://raw.githubusercontent.com/MetaArivu/terraform-quickstart/main/images/aws-integration.jpg)
+
 3) In intergration page select aws 
 
 4) click on Add the configuration.
 
+![MS](https://raw.githubusercontent.com/MetaArivu/terraform-quickstart/main/images/add-configuration.jpeg)
+
 5) Here you will get the AccountID and external ID
 
 COPY those for future use in terraform script.
+
+![MS](https://raw.githubusercontent.com/MetaArivu/terraform-quickstart/main/images/J1-6-Integration-AWS-Terraform.jpg)
 
 
 ## Terraform Edits
