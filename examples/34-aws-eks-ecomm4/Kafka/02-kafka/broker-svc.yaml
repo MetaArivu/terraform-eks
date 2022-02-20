@@ -13,4 +13,4 @@ spec:
     name: jmx
   selector:
     app: kafka
-  type: LoadBalancer
+  type: ClusterIP
