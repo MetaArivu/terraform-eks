@@ -1,0 +1,34 @@
+<any entity>
+AccessPolicy
+AccessRole
+Account
+Application
+Assessment
+CodeRepo
+CodeReview (i.e. PR)
+Container
+Control
+ControlPolicy
+Database
+Device
+Function
+Gateway
+HOST
+Host
+HostAgent
+Network
+Organization
+Person
+Policy
+Procedure
+Resource
+Risk
+Service
+Site
+Team
+Training
+User
+UserGroup
+Vendor
+Vulnerability
+Weakness
