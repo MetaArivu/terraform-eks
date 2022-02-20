@@ -144,7 +144,7 @@ aws resource dashboard
   
   
   
-  search s3 blockpublicacl not true
+  3) search s3 blockpublicacl not true
   
   query:
   
@@ -156,6 +156,26 @@ aws resource dashboard
 
 
 
+
+
+ 4) Complex queries:
+ 
+ query: FIND AccessKey WITH usage='ssh'
+
+
+![MS](https://raw.githubusercontent.com/MetaArivu/terraform-quickstart/main/images/j4.png)
+
+
+
+
+query : FIND Firewall AS fw
+    THAT ALLOWS AS rule (Network|Host) AS n
+WHERE
+    rule.ingress=true AND rule.fromPort=22
+RETURN
+    fw._type, fw.displayName
+
+![MS](https://raw.githubusercontent.com/MetaArivu/terraform-quickstart/main/images/j5.png)
 
 
 
