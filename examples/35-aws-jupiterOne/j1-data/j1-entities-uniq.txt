@@ -1,11 +1,10 @@
-<any entity>
 AccessPolicy
 AccessRole
 Account
 Application
 Assessment
 CodeRepo
-CodeReview (i.e. PR)
+CodeReview
 Container
 Control
 ControlPolicy
@@ -13,7 +12,6 @@ Database
 Device
 Function
 Gateway
-HOST
 Host
 HostAgent
 Network
