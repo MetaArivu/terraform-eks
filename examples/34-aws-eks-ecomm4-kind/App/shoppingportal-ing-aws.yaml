@@ -66,5 +66,12 @@ spec:
           service:
             name: shopping-cart-query-service
             port: 
-              number: 80  
+              number: 80
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: zipkin-svc
+            port: 
+              number: 9411                
                                                 
